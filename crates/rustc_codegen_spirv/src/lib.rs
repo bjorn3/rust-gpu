@@ -176,7 +176,7 @@ fn target_options() -> Target {
 }
 
 // TODO: Should this store Vec or Module?
-struct SpirvModuleBuffer(Vec<u32>);
+pub struct SpirvModuleBuffer(Vec<u32>);
 
 impl ModuleBufferMethods for SpirvModuleBuffer {
     fn data(&self) -> &[u8] {
@@ -185,7 +185,7 @@ impl ModuleBufferMethods for SpirvModuleBuffer {
 }
 
 // TODO: Should this store Vec or Module?
-struct SpirvThinBuffer(Vec<u32>);
+pub struct SpirvThinBuffer(Vec<u32>);
 
 impl ThinBufferMethods for SpirvThinBuffer {
     fn data(&self) -> &[u8] {
@@ -206,7 +206,7 @@ impl MetadataLoader for SpirvMetadataLoader {
 }
 
 #[derive(Clone)]
-struct SpirvCodegenBackend;
+pub struct SpirvCodegenBackend;
 
 impl CodegenBackend for SpirvCodegenBackend {
     fn target_features(&self, sess: &Session) -> Vec<Symbol> {
